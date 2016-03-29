@@ -221,7 +221,7 @@ class Css extends Type
         if (
             $originalUrl[0] !== '/' &&
             strpos($originalUrl, '://') === false &&
-            strpos($originalUrl, 'data:image') === false
+            strpos($originalUrl, 'data:') === false
         ) {
             $basePath = SUB_FOLDER  . str_replace($webroot, '', dirname($originalFile));
             $basePathParts = array_reverse(array_filter(explode('/', $basePath)));
@@ -253,7 +253,7 @@ class Css extends Type
             if (
                 strpos($url, $dispatcherUrl) !== 0 &&
                 strpos($originalUrl, '://') === false &&
-                strpos($originalUrl, 'data:image') === false
+                strpos($originalUrl, 'data:') === false
             ) {
                 $url = str_replace('?', '&', $url);
                 $url = $dispatcherUrl . $url;
